@@ -1,18 +1,12 @@
 import * as React from "react";
+
+import { IHorseLampProps } from "./typings.d";
 import { getClassNameWithPrefix } from '../utils/className';
 import './index.scss';
 
 const { memo, useEffect, useRef, useState } = React;
 
-interface IHorseLampProps {
-  speed?: number;
-  from?: number;
-  children?: React.ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const HorseLamp = (props: IHorseLampProps) => {
+export const HorseLamp = memo((props: IHorseLampProps) => {
   const { speed = 0.5, from = 0, children, className = '', style } = props;
   const trackRef = useRef<HTMLDivElement>(null);
   const originFrom = from;
@@ -55,6 +49,4 @@ const HorseLamp = (props: IHorseLampProps) => {
       </div>
     </div>
   );
-};
-
-export default memo(HorseLamp);
+});
