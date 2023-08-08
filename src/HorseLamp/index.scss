@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+#{$prefix}-horse-lamp {
+  overflow: hidden;
+  &-track {
+    display: flex;
+  }
+  &-body {
+    display: flex;
+  }
+}
